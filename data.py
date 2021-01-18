@@ -4,13 +4,13 @@ from math import *
 
 
 def _extract_data():
-    """提取数据到D:\py\ml-25m\data.csv"""
+    """提取数据到.\ml-25m\data.csv"""
     path = os.getcwd()  # 获取当前路径
-    movies = pd.read_csv(path + "D:\py\ml-25m\movies.csv")
-    ratings = pd.read_csv(path + "D:\py\ml-25m\\ratings.csv")  ##这里注意如果路径的中文件名开头是r，要转义。
+    movies = pd.read_csv(path + "\ml-25m\movies.csv")
+    ratings = pd.read_csv(path + "\ml-25m\\ratings.csv")  ##这里注意如果路径的中文件名开头是r，要转义。
     data = pd.merge(movies, ratings, on="movieId")  # 通过两数据框之间的movieId连接
     data[["userId", "rating", "movieId", "title"]].sort_values("userId").to_csv(
-        path + "D:\py\ml-25mml-25m\data.csv", index=False
+        path + "\ml-25mml-25m\data.csv", index=False
     )
 
 
@@ -18,7 +18,7 @@ def _save_dict():
     """存储数据到dict中"""
     path = os.getcwd()  # 获取当前路径
     file = open(
-        path + "D:\py\ml-25m\data.csv", "r", encoding="UTF-8"
+        path + "\ml-25m\data.csv", "r", encoding="UTF-8"
     )  # 记得读取文件时加‘r’， encoding='UTF-8'
     ##读取data.csv中每行中除了名字的数据
     data = {}  ##存放每位用户评论的电影和评分

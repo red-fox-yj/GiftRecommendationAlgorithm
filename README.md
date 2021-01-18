@@ -1,2 +1,3 @@
 # GiftRecommendationAlgorithm
-礼物推荐算法的python实现
+说明:
+movieLen数据集训练集下载[https://grouplens.org/datasets/movielens/]
